@@ -1,39 +1,80 @@
-let myArray = ["apples", "bananas", "oranges", "avocados", "magoes"];
-console.log("Original Array:", myArray);
+let number = -5; 
 
-let firstElement = myArray[0];
-let lastElement = myArray[myArray.length - 1];
-let middleElement = myArray[Math.floor(myArray.length / 2)];
-
-console.log("First Element:", firstElement);
-console.log("Middle Element:", middleElement);
-console.log("Last Element:", lastElement);
-
-console.log("Array Length:", myArray.length);
-
-myArray.push("kiwi");
-console.log("After push():", myArray);
-
-myArray.shift();
-console.log("After shift():", myArray);
-
-myArray.unshift("pear");
-console.log("After unshift():", myArray);
-
-myArray.splice(2, 1, "cherry");
-console.log("After splice():", myArray);
-
-console.log("For Loop:");
-for (let i = 0; i < myArray.length; i++) {
-    console.log(myArray[i]);
+if (number > 0) {
+    console.log(`${number} is positive`);
+} else if (number < 0) {
+    console.log(`${number} is negative`);
+} else {
+    console.log(`${number} is zero`);
 }
 
-console.log("forEach Loop:");
-myArray.forEach(function(item, index) {
-    console.log(`${index}: ${item}`);
-});
+let day = 3; 
 
-const [first, second, ...rest] = myArray;
-console.log("First:", first);
-console.log("Second:", second);
-console.log("Rest of the array:", rest);
+switch (day) {
+    case 1:
+        console.log("Sunday");
+        break;
+    case 2:
+        console.log("Monday");
+        break;
+    case 3:
+        console.log("Tuesday");
+        break;
+    case 4:
+        console.log("Wednesday");
+        break;
+    case 5:
+        console.log("Thursday");
+        break;
+    case 6:
+        console.log("Friday");
+        break;
+    case 7:
+        console.log("Saturday");
+        break;
+    default:
+        console.log("Invalid day (must be 1-7)");
+}
+
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+
+let i = 1;
+while (i <= 5) {
+    console.log(i);
+    i++;
+}
+
+let j = 1;
+do {
+    console.log(j);
+    j++;
+} while (j <= 5);
+
+for (let k = 1; k <= 5; k++) {
+    if (k === 3) {
+        console.log("Stopping at 3");
+        break;
+    }
+    console.log(k);
+}
+
+for (let k = 1; k <= 5; k++) {
+    if (k === 3) {
+        console.log("Skipping 3");
+        continue;
+    }
+    console.log(k);
+}
+
+let globalVar = "I'm global!";
+
+function scopeExample() {
+    let localVar = "I'm local!";
+    console.log(globalVar);
+    console.log(localVar);
+}
+scopeExample();
+
+console.log(globalVar); 
